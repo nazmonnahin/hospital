@@ -87,8 +87,11 @@
 
             @auth 
 
+            <li class="nav-item">
+              <a class="nav-link" style="background: rgb(44, 202, 230); color:black" href="{{ url('myappointment') }}">Appointment</a>
+            </li>
+
              <x-app-layout>
-  
              </x-app-layout>
 
             @else
@@ -110,6 +113,15 @@
       </div> <!-- .container -->
     </nav>
   </header>
+          <div style="text-align: center">
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+
+                {{ session()->get('message') }}
+
+            </div>
+            @endif
+          </div>
 
   <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
     <div class="hero-section">
