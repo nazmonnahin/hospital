@@ -25,6 +25,7 @@
                     <th style="padding: 20px">Status</th>
                     <th style="padding: 20px">Approve</th>
                     <th style="padding: 20px">Cancel</th>
+                    <th style="padding: 20px">Mail</th>
                 </tr>
 
                 @foreach ($data as $appoinment)
@@ -41,6 +42,10 @@
                     <td>
                         <a class="btn btn-danger" href="{{ url('cancel',$appoinment->id) }}">Cancel</a>
                     </td>
+
+                    <td>
+                      <a class="btn btn-danger" href="{{ url('cancel',$appoinment->id) }}">Send Mail</a>
+                  </td>
                 
                 </tr>
 

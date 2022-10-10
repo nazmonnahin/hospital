@@ -25,21 +25,21 @@
             </div>
             @endif
 
-            <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('update',$data->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Doctor Name</label>
-                    <input value="{{ $data->name }}" required="" style="color:black ;" type="text" class="form-control"  placeholder="Enter Doctor Name" name="name">
+                    <input value="{{ $data->name }}" style="color:black ;" type="text" class="form-control"  placeholder="Enter Doctor Name" name="name">
                 </div>
 
                 <div class="form-group">
                     <label>phone Number</label>
-                    <input value="{{ $data->number }}" required="" style="color:black ;" type="text" class="form-control"  placeholder="Enter Number" name="number">
+                    <input value="{{ $data->number }}" style="color:black ;" type="text" class="form-control"  placeholder="Enter Number" name="number">
                 </div>
 
                 <div class="form-group">
                     <label>Speciality</label>
-                    <select value="{{ $data->speciality }}" required="" style="color:white ;" class="form-control" name="speciality" id="">
+                    <select value="{{ $data->speciality }}" style="color:white ;" class="form-control" name="speciality" id="">
                     
                         <option value="pathology">Pathology</option>
                         <option value="pediatrics">Pediatrics</option>
@@ -51,18 +51,18 @@
 
                 <div class="form-group">
                     <label>Room Number</label>
-                    <input value="{{ $data->room }}" required="" style="color:black ;" type="number" class="form-control"  placeholder="Enter Room Number" name="room">
+                    <input value="{{ $data->room }}" style="color:black ;" type="number" class="form-control"  placeholder="Enter Room Number" name="room">
                 </div>
 
                 <div class="form-group">
-                  <label>Doctor Image</label>
+                  <label>Old Image</label>
                   <img style="height: 100px" src="doctorimage/{{  $data->image }}" alt="">
               </div>
 
                 <div class="form-group">
-                    <label>Doctor Photo</label>
+                    <label>Update Photo</label>
                     <br>
-                   <input required="" type="file" name="file">
+                   <input type="file" name="file">
                 </div>
 
                 <div class="form-group">
